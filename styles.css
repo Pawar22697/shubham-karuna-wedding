@@ -38,21 +38,85 @@ body.is-locked #siteContent {
   pointer-events: none;
 }
 
+/* =========================================
+   MUSIC TOGGLE BUTTON
+========================================= */
+
+.music-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10001;
+
+  width: 48px;
+  height: 48px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+
+  background: rgba(80, 35, 45, 0.88);
+  color: white;
+
+  font-size: 22px;
+  cursor: pointer;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.music-toggle:hover {
+  transform: scale(1.1);
+  background: #8b5360;
+}
+
+.music-toggle:active {
+  transform: scale(0.95);
+}
+
+.music-toggle:focus-visible {
+  outline: 2px solid #fff8ed;
+  outline-offset: 4px;
+}
+
 /* INVITATION OPENING SCREEN */
 
 .invitation-gate {
   position: fixed;
   inset: 0;
   z-index: 1000;
+
   display: grid;
   place-items: center;
+
   overflow: hidden;
   padding: 25px;
+
   color: var(--ivory);
   text-align: center;
+
   background:
-    radial-gradient(ellipse at center, #895b4c 0%, #542d32 55%, #321d25 100%);
-  transition: opacity 0.8s ease, visibility 0.8s ease;
+    radial-gradient(
+      ellipse at center,
+      #895b4c 0%,
+      #542d32 55%,
+      #321d25 100%
+    );
+
+  transition:
+    opacity 0.8s ease,
+    visibility 0.8s ease;
 }
 
 .invitation-gate::before,
@@ -100,6 +164,7 @@ body.is-locked #siteContent {
     opacity: 0;
     transform: translateY(18px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -147,14 +212,17 @@ body.is-locked #siteContent {
   top: 8%;
   width: 80%;
   height: 85%;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 9px;
+
   background: #fffaf0;
   color: var(--maroon);
   border: 1px solid #d8bd91;
+
   transition: transform 1s ease 0.25s;
 }
 
@@ -174,7 +242,15 @@ body.is-locked #siteContent {
   position: absolute;
   inset: 0;
   background: #e9d5b5;
-  clip-path: polygon(0 0, 50% 58%, 100% 0, 100% 100%, 0 100%);
+
+  clip-path: polygon(
+    0 0,
+    50% 58%,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+
   border-bottom: 2px solid #c5a36d;
 }
 
@@ -182,8 +258,15 @@ body.is-locked #siteContent {
   position: absolute;
   inset: 0;
   z-index: 3;
+
   background: #f1dfc1;
-  clip-path: polygon(0 0, 100% 0, 50% 63%);
+
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    50% 63%
+  );
+
   transform-origin: top center;
   transition: transform 0.9s ease;
   backface-visibility: hidden;
@@ -194,15 +277,20 @@ body.is-locked #siteContent {
   z-index: 4;
   left: 50%;
   top: 57%;
+
   transform: translate(-50%, -50%);
+
   width: 48px;
   height: 48px;
+
   display: grid;
   place-items: center;
+
   border-radius: 50%;
   color: #fff4e2;
   background: var(--maroon);
   border: 2px solid #d8b77f;
+
   font: 600 15px var(--serif);
   transition: opacity 0.35s ease;
 }
@@ -211,7 +299,7 @@ body.is-locked #siteContent {
   color: #e6c48f;
 }
 
-/* Envelope opening animation */
+/* ENVELOPE OPENING ANIMATION */
 
 .invitation-gate.opening .envelope-flap {
   transform: rotateX(180deg);
@@ -226,19 +314,28 @@ body.is-locked #siteContent {
   opacity: 0;
 }
 
+/* OPEN INVITATION BUTTON */
+
 .open-invitation-btn {
   display: inline-flex;
   align-items: center;
   gap: 15px;
+
   margin-top: 30px;
   padding: 17px 27px;
+
   color: #fff8ed;
   background: transparent;
   border: 1px solid #d8b77f;
+
   cursor: pointer;
+
   font: 500 10px 'DM Sans', sans-serif;
   letter-spacing: 2px;
-  transition: background 0.3s ease, transform 0.3s ease;
+
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
 .open-invitation-btn:hover {
@@ -249,6 +346,11 @@ body.is-locked #siteContent {
 .open-invitation-btn:focus-visible {
   outline: 2px solid #fff8ed;
   outline-offset: 5px;
+}
+
+.open-invitation-btn:disabled {
+  opacity: 0.7;
+  cursor: wait;
 }
 
 .button-arrow {
@@ -268,9 +370,12 @@ body.is-locked #siteContent {
   z-index: 1100;
   top: -35px;
   left: 0;
+
   pointer-events: none;
+
   color: #f5d69b;
   text-shadow: 0 0 12px #f7d99d;
+
   animation: particleFall var(--duration, 3s) ease-in forwards;
 }
 
@@ -284,15 +389,46 @@ body.is-locked #siteContent {
     opacity: 0;
     transform: translate3d(0, -20px, 0) rotate(0deg) scale(0.5);
   }
+
   12% {
     opacity: 1;
   }
+
   100% {
     opacity: 0;
-    transform: translate3d(var(--drift, 40px), 110vh, 0)
-      rotate(var(--spin, 360deg)) scale(1.1);
+    transform:
+      translate3d(var(--drift, 40px), 110vh, 0)
+      rotate(var(--spin, 360deg))
+      scale(1.1);
   }
 }
+
+/* SIDE PETALS */
+
+.side-petal {
+  animation: sideBurst var(--duration, 3s) ease-out forwards;
+}
+
+@keyframes sideBurst {
+  0% {
+    opacity: 0;
+    transform: translateX(0) rotate(0deg) scale(0.5);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translateX(var(--side-drift))
+      rotate(var(--spin))
+      scale(1.2);
+  }
+}
+
+/* CLOSING INVITATION SCREEN */
 
 .invitation-gate.closing {
   opacity: 0;
@@ -302,16 +438,22 @@ body.is-locked #siteContent {
 
 /* MAIN WEBSITE */
 
+/* HEADER */
+
 .header {
   height: 75px;
   padding: 0 7%;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   position: sticky;
   top: 0;
+
   background: var(--ivory);
   z-index: 10;
+
   border-bottom: 1px solid #e8ded0;
 }
 
@@ -357,13 +499,17 @@ footer span {
 
 .hero {
   min-height: 680px;
+
   display: grid;
   place-items: center;
+
   text-align: center;
   color: white;
+
   position: relative;
   isolation: isolate;
   overflow: hidden;
+
   background: #4b3030;
 }
 
@@ -372,10 +518,12 @@ footer span {
   position: absolute;
   z-index: -2;
   inset: -14px;
+
   background:
     linear-gradient(#321d1dcc, #321d1dbb),
     url('assets/photos/IMG_20261028_142545.jpg') center/cover no-repeat;
-  filter: blur(9px);
+
+  filter: blur(3px);
   transform: scale(1.04);
 }
 
@@ -384,6 +532,7 @@ footer span {
   position: absolute;
   z-index: 2;
   inset: 20px;
+
   border: 1px solid #d5b17a99;
   pointer-events: none;
 }
@@ -437,12 +586,16 @@ footer span {
   display: inline-block;
   margin-top: 25px;
   padding: 17px 25px;
+
   color: white;
   border: 1px solid white;
   text-decoration: none;
+
   font-size: 10px;
   letter-spacing: 2px;
 }
+
+/* INVITATION SECTION */
 
 .section {
   padding: 95px 8%;
@@ -463,6 +616,7 @@ h2 em {
 .description {
   max-width: 600px;
   margin: 30px auto;
+
   color: var(--muted);
   font: 19px/1.6 var(--serif);
 }
@@ -470,9 +624,11 @@ h2 em {
 .families {
   display: grid;
   grid-template-columns: 1fr 50px 1fr;
+
   max-width: 700px;
   margin: 50px auto 0;
   padding-top: 30px;
+
   border-top: 1px solid #e1d4c3;
 }
 
@@ -496,9 +652,12 @@ h2 em {
   font: 30px var(--serif);
 }
 
+/* COUNTDOWN */
+
 .countdown-section {
   background: var(--maroon);
   color: white;
+
   text-align: center;
   padding: 75px 15px;
 }
@@ -514,6 +673,7 @@ h2 em {
 .countdown {
   display: flex;
   justify-content: center;
+
   gap: clamp(18px, 5vw, 60px);
   margin-top: 35px;
 }
@@ -533,11 +693,15 @@ h2 em {
   font-size: 9px;
 }
 
+/* EVENTS */
+
 .event-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+
   gap: 18px;
   margin-top: 45px;
+
   text-align: left;
 }
 
@@ -569,6 +733,8 @@ h2 em {
   font-size: 12px;
 }
 
+/* VENUE */
+
 .venue {
   background: #eee4d7;
   text-align: left;
@@ -590,25 +756,12 @@ h2 em {
   border: 0;
 }
 
-.music-section {
-  padding: 45px 20px;
-  background: #eee4d7;
-  text-align: center;
-  color: var(--maroon);
-}
-
-.music-btn {
-  background: var(--maroon);
-  color: white;
-  border: 0;
-  padding: 15px 25px;
-  cursor: pointer;
-  font-family: inherit;
-}
+/* WHATSAPP SHARE SECTION */
 
 .share-section {
   text-align: center;
   padding: 90px 20px;
+
   color: white;
   background: linear-gradient(#321d1ddd, #713b3ddd);
 }
@@ -616,6 +769,8 @@ h2 em {
 .share-section h2 {
   color: white;
 }
+
+/* FOOTER */
 
 footer {
   padding: 45px 20px;
@@ -636,23 +791,29 @@ footer small {
 /* MOBILE */
 
 @media (max-width: 750px) {
+
   .menu-toggle {
     display: block;
+
     border: 0;
     background: none;
     color: var(--maroon);
+
     font-size: 23px;
     cursor: pointer;
   }
 
   .nav {
     display: none;
+
     position: absolute;
     top: 75px;
     left: 0;
     right: 0;
+
     background: var(--ivory);
     padding: 25px;
+
     flex-direction: column;
   }
 
@@ -671,9 +832,11 @@ footer small {
   .hero {
     min-height: 620px;
   }
+
 }
 
 @media (max-width: 480px) {
+
   .event-grid {
     grid-template-columns: 1fr;
   }
@@ -701,11 +864,21 @@ footer small {
   .gate-note {
     font-size: 14px;
   }
+
+  .music-toggle {
+    top: 14px;
+    right: 14px;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
 }
 
-/* Respect visitors who prefer reduced motion */
+/* ACCESSIBILITY: REDUCED MOTION */
 
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -714,23 +887,5 @@ footer small {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-}
 
-.side-petal {
-  animation: sideBurst var(--duration, 3s) ease-out forwards;
 }
-
-@keyframes sideBurst {
-  0% {
-    opacity: 0;
-    transform: translateX(0) rotate(0deg) scale(0.5);
-  }
-  15% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(var(--side-drift)) rotate(var(--spin)) scale(1.2);
-  }
-}
-

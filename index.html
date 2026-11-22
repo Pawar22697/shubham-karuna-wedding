@@ -10,6 +10,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles.css">
@@ -17,19 +18,33 @@
 
 <body class="is-locked">
 
-  <!-- Opening screen: all website details remain hidden until opened -->
+  <!-- Music toggle button -->
+  <button
+    id="musicToggle"
+    class="music-toggle"
+    type="button"
+    aria-label="Unmute wedding music"
+    aria-pressed="false">
+    🔇
+  </button>
+
+  <!-- Opening invitation screen -->
   <div class="invitation-gate" id="invitationGate">
+
     <div class="gate-glow"></div>
 
     <div class="gate-content">
+
       <p class="gate-eyebrow">A SPECIAL INVITATION</p>
 
       <div class="envelope" id="envelope">
         <div class="envelope-flap"></div>
+
         <div class="envelope-letter">
           <span class="letter-monogram">S <i>&</i> K</span>
           <span class="letter-text">You are invited</span>
         </div>
+
         <div class="envelope-front"></div>
         <div class="envelope-seal">S <i>&</i> K</div>
       </div>
@@ -37,22 +52,33 @@
       <p class="gate-names">Shubham <span>&</span> Karuna</p>
       <p class="gate-date">31 JANUARY 2027 · INDORE</p>
 
-      <button class="open-invitation-btn" id="openInvitation">
+      <button class="open-invitation-btn" id="openInvitation" type="button">
         <span>OPEN INVITATION</span>
         <span class="button-arrow">✦</span>
       </button>
 
-      <p class="gate-note">A little celebration of love, waiting just for you</p>
+      <p class="gate-note">
+        A little celebration of love, waiting just for you
+      </p>
+
     </div>
   </div>
 
-  <!-- Main website: hidden and inaccessible until invitation is opened -->
+  <!-- Main website content -->
   <div id="siteContent" aria-hidden="true" inert>
 
+    <!-- Header -->
     <header class="header">
+
       <a class="logo" href="#home">S <span>&</span> K</a>
 
-      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false">
+        ☰
+      </button>
 
       <nav class="nav">
         <a href="#invitation">Invitation</a>
@@ -62,13 +88,21 @@
       </nav>
 
       <a href="#invitation" class="header-btn">INVITATION</a>
+
     </header>
 
     <main>
+
+      <!-- Hero section -->
       <section class="hero" id="home">
+
         <div class="hero-content">
+
           <p class="eyebrow">TOGETHER WITH THEIR FAMILIES</p>
-          <p class="intro">Joyfully invite you to celebrate the wedding of</p>
+
+          <p class="intro">
+            Joyfully invite you to celebrate the wedding of
+          </p>
 
           <h1>
             Shubham
@@ -81,14 +115,22 @@
           <p class="wedding-date">31 · 01 · 2027</p>
           <p class="location">INDORE · MADHYA PRADESH</p>
 
-          <a href="#invitation" class="hero-btn">DISCOVER OUR INVITATION ↓</a>
+          <a href="#invitation" class="hero-btn">
+            DISCOVER OUR INVITATION ↓
+          </a>
+
         </div>
       </section>
 
+      <!-- Invitation section -->
       <section class="section invitation" id="invitation">
+
         <p class="eyebrow">A NOTE FROM OUR FAMILIES</p>
 
-        <h2>Two hearts, one beautiful<br><em>beginning.</em></h2>
+        <h2>
+          Two hearts, one beautiful<br>
+          <em>beginning.</em>
+        </h2>
 
         <p class="description">
           With the blessings of our parents and the love of our families,
@@ -97,6 +139,7 @@
         </p>
 
         <div class="families">
+
           <div>
             <small>GROOM'S FAMILY</small>
             <h3>Shubham</h3>
@@ -112,26 +155,50 @@
             <p>Mr. Bhasker Salve</p>
             <p>Mrs. Anjani Salve</p>
           </div>
+
         </div>
       </section>
 
+      <!-- Countdown section -->
       <section class="countdown-section">
+
         <p class="eyebrow">THE BIG DAY IS APPROACHING</p>
+
         <h2>Counting down to <em>forever</em></h2>
 
         <div class="countdown">
-          <div><strong id="days">00</strong><small>DAYS</small></div>
-          <div><strong id="hours">00</strong><small>HOURS</small></div>
-          <div><strong id="minutes">00</strong><small>MINUTES</small></div>
-          <div><strong id="seconds">00</strong><small>SECONDS</small></div>
+          <div>
+            <strong id="days">00</strong>
+            <small>DAYS</small>
+          </div>
+
+          <div>
+            <strong id="hours">00</strong>
+            <small>HOURS</small>
+          </div>
+
+          <div>
+            <strong id="minutes">00</strong>
+            <small>MINUTES</small>
+          </div>
+
+          <div>
+            <strong id="seconds">00</strong>
+            <small>SECONDS</small>
+          </div>
         </div>
+
       </section>
 
+      <!-- Events section -->
       <section class="section events" id="events">
+
         <p class="eyebrow">SAVE THE DATES</p>
+
         <h2>Our wedding <em>celebrations</em></h2>
 
         <div class="event-grid">
+
           <article class="event-card">
             <span>01 / FRIDAY</span>
             <h3>Mehendi</h3>
@@ -166,13 +233,21 @@
             <p>31 January 2027</p>
             <strong>8:00 PM onwards</strong>
           </article>
+
         </div>
       </section>
 
+      <!-- Venue section -->
       <section class="venue section" id="venue">
+
         <div>
+
           <p class="eyebrow">CELEBRATE WITH US</p>
-          <h2>Meet us at<br><em>the venue.</em></h2>
+
+          <h2>
+            Meet us at<br>
+            <em>the venue.</em>
+          </h2>
 
           <h3>PARINAY VATIKA</h3>
 
@@ -188,31 +263,48 @@
             rel="noopener">
             GET DIRECTIONS ↗
           </a>
+
         </div>
       </section>
 
-<audio id="weddingMusic" loop preload="auto">
-  <source src="assets/music/wedding-music.mp3" type="audio/mpeg">
-</audio>
-
+      <!-- WhatsApp sharing section -->
       <section class="share-section" id="share">
+
         <p class="eyebrow">YOUR PRESENCE IS OUR PRESENT</p>
-        <h2>We can't wait to<br><em>celebrate with you.</em></h2>
+
+        <h2>
+          We can't wait to<br>
+          <em>celebrate with you.</em>
+        </h2>
 
         <a id="whatsappShare" class="hero-btn" href="#">
           SHARE INVITATION ON WHATSAPP ↗
         </a>
+
       </section>
+
     </main>
 
+    <!-- Footer -->
     <footer>
+
       <h2>Shubham <span>&</span> Karuna</h2>
+
       <p>With love, from our families</p>
+
       <small>31 JANUARY 2027 · INDORE</small>
+
     </footer>
 
   </div>
 
+  <!-- Background music: kept outside hidden website content -->
+  <audio id="weddingMusic" loop preload="auto">
+    <source src="assets/music/wedding-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- JavaScript -->
   <script src="script.js"></script>
+
 </body>
 </html>
