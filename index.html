@@ -1,0 +1,218 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f3eb">
+  <meta name="description" content="Shubham & Karuna Wedding Invitation - 31 January 2027">
+  <title>Shubham & Karuna | Wedding Invitation</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="is-locked">
+
+  <!-- Opening screen: all website details remain hidden until opened -->
+  <div class="invitation-gate" id="invitationGate">
+    <div class="gate-glow"></div>
+
+    <div class="gate-content">
+      <p class="gate-eyebrow">A SPECIAL INVITATION</p>
+
+      <div class="envelope" id="envelope">
+        <div class="envelope-flap"></div>
+        <div class="envelope-letter">
+          <span class="letter-monogram">S <i>&</i> K</span>
+          <span class="letter-text">You are invited</span>
+        </div>
+        <div class="envelope-front"></div>
+        <div class="envelope-seal">S <i>&</i> K</div>
+      </div>
+
+      <p class="gate-names">Shubham <span>&</span> Karuna</p>
+      <p class="gate-date">31 JANUARY 2027 · INDORE</p>
+
+      <button class="open-invitation-btn" id="openInvitation">
+        <span>OPEN INVITATION</span>
+        <span class="button-arrow">✦</span>
+      </button>
+
+      <p class="gate-note">A little celebration of love, waiting just for you</p>
+    </div>
+  </div>
+
+  <!-- Main website: hidden and inaccessible until invitation is opened -->
+  <div id="siteContent" aria-hidden="true" inert>
+
+    <header class="header">
+      <a class="logo" href="#home">S <span>&</span> K</a>
+
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <nav class="nav">
+        <a href="#invitation">Invitation</a>
+        <a href="#events">Celebrations</a>
+        <a href="#venue">Venue</a>
+        <a href="#share">Share</a>
+      </nav>
+
+      <a href="#invitation" class="header-btn">INVITATION</a>
+    </header>
+
+    <main>
+      <section class="hero" id="home">
+        <div class="hero-content">
+          <p class="eyebrow">TOGETHER WITH THEIR FAMILIES</p>
+          <p class="intro">Joyfully invite you to celebrate the wedding of</p>
+
+          <h1>
+            Shubham
+            <span>&</span>
+            Karuna
+          </h1>
+
+          <div class="ornament">✦ ───── ❦ ───── ✦</div>
+
+          <p class="wedding-date">31 · 01 · 2027</p>
+          <p class="location">INDORE · MADHYA PRADESH</p>
+
+          <a href="#invitation" class="hero-btn">DISCOVER OUR INVITATION ↓</a>
+        </div>
+      </section>
+
+      <section class="section invitation" id="invitation">
+        <p class="eyebrow">A NOTE FROM OUR FAMILIES</p>
+
+        <h2>Two hearts, one beautiful<br><em>beginning.</em></h2>
+
+        <p class="description">
+          With the blessings of our parents and the love of our families,
+          we invite you to join us as we begin our forever.
+          Your presence will make our celebration complete.
+        </p>
+
+        <div class="families">
+          <div>
+            <small>GROOM'S FAMILY</small>
+            <h3>Shubham</h3>
+            <p>Mr. Ravi Pawar</p>
+            <p>Mrs. Anita Pawar</p>
+          </div>
+
+          <div class="family-divider">❦</div>
+
+          <div>
+            <small>BRIDE'S FAMILY</small>
+            <h3>Karuna</h3>
+            <p>Mr. Bhasker Salve</p>
+            <p>Mrs. Anjani Salve</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="countdown-section">
+        <p class="eyebrow">THE BIG DAY IS APPROACHING</p>
+        <h2>Counting down to <em>forever</em></h2>
+
+        <div class="countdown">
+          <div><strong id="days">00</strong><small>DAYS</small></div>
+          <div><strong id="hours">00</strong><small>HOURS</small></div>
+          <div><strong id="minutes">00</strong><small>MINUTES</small></div>
+          <div><strong id="seconds">00</strong><small>SECONDS</small></div>
+        </div>
+      </section>
+
+      <section class="section events" id="events">
+        <p class="eyebrow">SAVE THE DATES</p>
+        <h2>Our wedding <em>celebrations</em></h2>
+
+        <div class="event-grid">
+          <article class="event-card">
+            <span>01 / FRIDAY</span>
+            <h3>Mehendi</h3>
+            <p>29 January 2027</p>
+            <strong>9:00 PM</strong>
+          </article>
+
+          <article class="event-card">
+            <span>02 / SATURDAY</span>
+            <h3>Haldi</h3>
+            <p>30 January 2027</p>
+            <strong>9:00 AM onwards</strong>
+          </article>
+
+          <article class="event-card">
+            <span>03 / SATURDAY</span>
+            <h3>Sangeet</h3>
+            <p>30 January 2027</p>
+            <strong>7:00 PM onwards</strong>
+          </article>
+
+          <article class="event-card">
+            <span>04 / SUNDAY</span>
+            <h3>Wedding</h3>
+            <p>31 January 2027</p>
+            <strong>2:00 PM onwards</strong>
+          </article>
+
+          <article class="event-card">
+            <span>05 / SUNDAY</span>
+            <h3>Reception</h3>
+            <p>31 January 2027</p>
+            <strong>8:00 PM onwards</strong>
+          </article>
+        </div>
+      </section>
+
+      <section class="venue section" id="venue">
+        <div>
+          <p class="eyebrow">CELEBRATE WITH US</p>
+          <h2>Meet us at<br><em>the venue.</em></h2>
+
+          <h3>PARINAY VATIKA</h3>
+
+          <p>
+            Near RRCAT Square<br>
+            Indore, Madhya Pradesh, India
+          </p>
+
+          <a
+            class="dark-btn"
+            href="https://www.google.com/maps/search/?api=1&query=Parinay+Vatika+Near+RRCAT+Square+Indore+Madhya+Pradesh"
+            target="_blank"
+            rel="noopener">
+            GET DIRECTIONS ↗
+          </a>
+        </div>
+      </section>
+
+<audio id="weddingMusic" loop preload="auto">
+  <source src="assets/music/wedding-music.mp3" type="audio/mpeg">
+</audio>
+
+      <section class="share-section" id="share">
+        <p class="eyebrow">YOUR PRESENCE IS OUR PRESENT</p>
+        <h2>We can't wait to<br><em>celebrate with you.</em></h2>
+
+        <a id="whatsappShare" class="hero-btn" href="#">
+          SHARE INVITATION ON WHATSAPP ↗
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <h2>Shubham <span>&</span> Karuna</h2>
+      <p>With love, from our families</p>
+      <small>31 JANUARY 2027 · INDORE</small>
+    </footer>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
