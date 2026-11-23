@@ -889,44 +889,6 @@ footer small {
   }
 
 }
-/* ADD TO CALENDAR BUTTON */
-
-.calendar-actions {
-  display: flex;
-  justify-content: center;
-  margin-top: 28px;
-}
-
-.calendar-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 13px 25px;
-  border: 1px solid #c9a45c;
-  border-radius: 30px;
-  background: #800020;
-  color: #fff8e8;
-  font-family: inherit;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.calendar-btn:hover {
-  background: #c9a45c;
-  color: #4a1424;
-  transform: translateY(-2px);
-}
-
-.calendar-btn:focus-visible {
-  outline: 3px solid #c9a45c;
-  outline-offset: 4px;
-}
-
-
-
 /* =========================================
    VINTAGE WEDDING CAR PROCESSION
 ========================================= */
@@ -1129,14 +1091,19 @@ footer small {
 }
 
 
-
-/* WEDDING CALENDAR BUTTON - AUTOMATED */
+/* WEDDING CALENDAR - SINGLE CLEAN IMPLEMENTATION */
 
 .calendar-actions {
   display: flex;
   justify-content: center;
-  margin-top: 28px;
+  margin: 28px auto 0;
   padding: 0 16px;
+}
+
+.calendar-picker {
+  width: 100%;
+  max-width: 440px;
+  text-align: center;
 }
 
 .calendar-btn {
@@ -1144,23 +1111,29 @@ footer small {
   align-items: center;
   justify-content: center;
   gap: 12px;
+  width: 100%;
   min-height: 52px;
-  padding: 13px 26px;
-
+  padding: 13px 22px;
   border: 1px solid #c9a45c;
   border-radius: 40px;
-
   background: #713b3d;
   color: #fffaf0;
-
   font-family: inherit;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.3px;
-
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(80, 35, 45, 0.13);
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, transform 0.3s ease;
+  list-style: none;
+}
+
+.calendar-btn::-webkit-details-marker {
+  display: none;
+}
+
+.calendar-btn::marker {
+  content: "";
 }
 
 .calendar-icon {
@@ -1173,21 +1146,92 @@ footer small {
   transform: translateY(-2px);
 }
 
-.calendar-btn:active {
-  transform: scale(0.97);
+.calendar-picker[open] .calendar-btn {
+  border-radius: 25px;
 }
 
-.calendar-btn:focus-visible {
+.calendar-btn:focus-visible,
+.calendar-event-link:focus-visible {
   outline: 3px solid #bd9a63;
   outline-offset: 4px;
 }
 
-@media (max-width: 600px) {
-  .calendar-btn {
-    width: 100%;
-    max-width: 340px;
-    font-size: 13px;
-    padding: 13px 16px;
-  }
+.calendar-options {
+  margin-top: 16px;
+  padding: 18px;
+  border: 1px solid rgba(201, 164, 92, 0.55);
+  border-radius: 16px;
+  background: #fffaf0;
+  color: #4a1424;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(80, 35, 45, 0.10);
 }
 
+.calendar-option-group + .calendar-option-group {
+  margin-top: 20px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(113, 59, 61, 0.18);
+}
+
+.calendar-option-group h3 {
+  margin: 0 0 7px;
+  color: #713b3d;
+  font-size: 15px;
+}
+
+.calendar-option-group p {
+  margin: 0 0 10px;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.calendar-event-link {
+  display: block;
+  margin-top: 9px;
+  padding: 11px 13px;
+  border: 1px solid rgba(201, 164, 92, 0.65);
+  border-radius: 9px;
+  background: #fff;
+  color: #713b3d;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.calendar-event-link:hover {
+  background: #f5ead6;
+}
+
+.calendar-special-link {
+  background: #713b3d;
+  color: #fffaf0;
+}
+
+.calendar-special-link:hover {
+  background: #bd9a63;
+  color: #34251f;
+}
+
+.calendar-option-group .calendar-help {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+@media (max-width: 600px) {
+  .calendar-picker {
+    max-width: 340px;
+  }
+
+  .calendar-btn {
+    min-height: 50px;
+    padding: 12px 14px;
+    font-size: 13px;
+  }
+
+  .calendar-options {
+    padding: 14px;
+  }
+}

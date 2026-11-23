@@ -1,0 +1,53 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Shubham and Karuna//Wedding Calendar//EN
+CALSCALE:GREGORIAN
+X-WR-CALNAME:Shubham & Karuna Wedding
+X-WR-TIMEZONE:Asia/Kolkata
+REFRESH-INTERVAL;VALUE=DURATION:PT12H
+BEGIN:VEVENT
+UID:shubham-karuna-0-202701@wedding
+DTSTAMP:20261123T071208Z
+DTSTART:20270129T153000Z
+DTEND:20270129T183000Z
+SUMMARY:Mehendi - Shubham & Karuna
+LOCATION:Parinay Vatika\, Near RRCAT Square\, Indore\, Madhya Pradesh\, India
+DESCRIPTION:Join us to celebrate Shubham and Karuna's wedding!
+END:VEVENT
+BEGIN:VEVENT
+UID:shubham-karuna-1-202701@wedding
+DTSTAMP:20261123T071208Z
+DTSTART:20270130T033000Z
+DTEND:20270130T063000Z
+SUMMARY:Haldi - Shubham & Karuna
+LOCATION:Parinay Vatika\, Near RRCAT Square\, Indore\, Madhya Pradesh\, India
+DESCRIPTION:Join us to celebrate Shubham and Karuna's wedding!
+END:VEVENT
+BEGIN:VEVENT
+UID:shubham-karuna-2-202701@wedding
+DTSTAMP:20261123T071208Z
+DTSTART:20270130T133000Z
+DTEND:20270130T180000Z
+SUMMARY:Sangeet - Shubham & Karuna
+LOCATION:Parinay Vatika\, Near RRCAT Square\, Indore\, Madhya Pradesh\, India
+DESCRIPTION:Join us to celebrate Shubham and Karuna's wedding!
+END:VEVENT
+BEGIN:VEVENT
+UID:shubham-karuna-3-202701@wedding
+DTSTAMP:20261123T071208Z
+DTSTART:20270131T083000Z
+DTEND:20270131T110000Z
+SUMMARY:Wedding - Shubham & Karuna
+LOCATION:Parinay Vatika\, Near RRCAT Square\, Indore\, Madhya Pradesh\, India
+DESCRIPTION:Join us to celebrate Shubham and Karuna's wedding!
+END:VEVENT
+BEGIN:VEVENT
+UID:shubham-karuna-4-202701@wedding
+DTSTAMP:20261123T071208Z
+DTSTART:20270131T143000Z
+DTEND:20270131T183000Z
+SUMMARY:Reception - Shubham & Karuna
+LOCATION:Parinay Vatika\, Near RRCAT Square\, Indore\, Madhya Pradesh\, India
+DESCRIPTION:Join us to celebrate Shubham and Karuna's wedding!
+END:VEVENT
+END:VCALENDAR
