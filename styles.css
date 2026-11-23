@@ -889,3 +889,241 @@ footer small {
   }
 
 }
+/* ADD TO CALENDAR BUTTON */
+
+.calendar-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+.calendar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 13px 25px;
+  border: 1px solid #c9a45c;
+  border-radius: 30px;
+  background: #800020;
+  color: #fff8e8;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.calendar-btn:hover {
+  background: #c9a45c;
+  color: #4a1424;
+  transform: translateY(-2px);
+}
+
+.calendar-btn:focus-visible {
+  outline: 3px solid #c9a45c;
+  outline-offset: 4px;
+}
+
+
+
+/* =========================================
+   VINTAGE WEDDING CAR PROCESSION
+========================================= */
+
+.wedding-procession {
+  position: relative;
+  width: 100%;
+  height: 145px;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #fffaf0,
+    #f3e7d7
+  );
+  border-top: 1px solid rgba(185, 145, 75, 0.4);
+  border-bottom: 1px solid rgba(185, 145, 75, 0.4);
+}
+
+/* Moving floral road */
+
+.procession-road {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  width: 100%;
+  height: 47px;
+  overflow: hidden;
+  border-top: 2px solid #c9a45c;
+  border-bottom: 2px solid #c9a45c;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.road-track {
+  display: flex;
+  width: max-content;
+  height: 100%;
+  animation: floralRoadMove 12s linear infinite;
+}
+
+.road-pattern {
+  flex: 0 0 100vw;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  white-space: nowrap;
+  font-size: 23px;
+  letter-spacing: 2px;
+}
+
+
+@keyframes floralRoadMove {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Vintage car */
+
+.wedding-car {
+  position: absolute;
+  z-index: 2;
+  width: 150px;
+  height: 83px;
+  left: 50%;
+  bottom: 39px;
+  transform: translateX(-50%);
+}
+
+/* Car roof */
+
+.car-roof {
+  position: absolute;
+  width: 91px;
+  height: 35px;
+  left: 29px;
+  top: 4px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5px;
+  background: #701d32;
+  border: 3px solid #c9a45c;
+  border-bottom: none;
+  border-radius: 35px 35px 3px 3px;
+}
+
+/* Car windows */
+
+.car-window {
+  width: 34px;
+  height: 22px;
+  background: #f6e8cb;
+  border: 2px solid #c9a45c;
+  border-radius: 12px 12px 2px 2px;
+}
+
+/* Car body */
+
+.car-body {
+  position: absolute;
+  width: 150px;
+  height: 36px;
+  bottom: 15px;
+  background: #701d32;
+  border: 3px solid #c9a45c;
+  border-radius: 28px 35px 12px 12px;
+  box-shadow: 0 4px 5px rgba(70, 35, 30, 0.2);
+}
+
+/* Wedding flower decoration */
+
+.car-decoration {
+  position: absolute;
+  top: 4px;
+  left: 42px;
+  color: #e8c77e;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.car-door {
+  position: absolute;
+  right: 37px;
+  top: 3px;
+  height: 25px;
+  border-left: 1px solid #d9b66b;
+}
+
+/* Wheels */
+
+.car-wheel {
+  position: absolute;
+  bottom: 7px;
+  width: 27px;
+  height: 27px;
+  background: #3d3030;
+  border: 4px solid #c9a45c;
+  border-radius: 50%;
+  animation: wheelRotate 1s linear infinite;
+}
+
+.car-wheel::after {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #f7e7c7;
+  border-radius: 50%;
+  top: 6px;
+  left: 6px;
+}
+
+.wheel-left {
+  left: 22px;
+}
+
+.wheel-right {
+  right: 22px;
+}
+
+@keyframes wheelRotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 600px) {
+  .wedding-procession {
+    height: 125px;
+  }
+
+  .wedding-car {
+    transform: translateX(-50%) scale(0.85);
+    transform-origin: bottom center;
+  }
+
+  .road-pattern {
+    font-size: 19px;
+    letter-spacing: 1px;
+  }
+
+  .road-track {
+    animation-duration: 10s;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .road-track,
+  .car-wheel {
+    animation: none;
+  }
+}
