@@ -321,3 +321,115 @@ if (whatsappShare) {
   whatsappShare.target = "_blank";
   whatsappShare.rel = "noopener noreferrer";
 }
+
+// WEDDING CALENDAR DOWNLOAD - AUTOMATED
+
+
+// WEDDING CALENDAR DOWNLOAD - AUTOMATED
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const calendarButton = document.getElementById("addToCalendar");
+
+  if (!calendarButton) return;
+
+  calendarButton.addEventListener("click", function () {
+
+    const venue =
+      "Parinay Vatika, Near RRCAT Square, Indore, Madhya Pradesh, India";
+
+    // Event times are in UTC.
+    // They correspond to the published Indian Standard Time schedule.
+
+    const events = [
+      {
+        title: "Mehendi - Shubham & Karuna",
+        start: "20270129T153000Z",
+        end: "20270129T173000Z"
+      },
+      {
+        title: "Haldi - Shubham & Karuna",
+        start: "20270130T033000Z",
+        end: "20270130T053000Z"
+      },
+      {
+        title: "Sangeet - Shubham & Karuna",
+        start: "20270130T133000Z",
+        end: "20270130T160000Z"
+      },
+      {
+        title: "Wedding - Shubham & Karuna",
+        start: "20270131T083000Z",
+        end: "20270131T110000Z"
+      },
+      {
+        title: "Reception - Shubham & Karuna",
+        start: "20270131T143000Z",
+        end: "20270131T173000Z"
+      }
+    ];
+
+    function escapeICal(value) {
+      return value
+        .replace(/\\/g, "\\\\")
+        .replace(/\n/g, "\\n")
+        .replace(/,/g, "\\,")
+        .replace(/;/g, "\\;");
+    }
+
+    const stamp = new Date().toISOString()
+      .replace(/[-:]/g, "")
+      .replace(/\.\d{3}/, "");
+
+    const lines = [
+      "BEGIN:VCALENDAR",
+      "VERSION:2.0",
+      "PRODID:-//Shubham and Karuna//Wedding Calendar//EN",
+      "CALSCALE:GREGORIAN",
+      "METHOD:PUBLISH"
+    ];
+
+    events.forEach(function (event, index) {
+      lines.push(
+        "BEGIN:VEVENT",
+        "UID:shubham-karuna-" + index + "-202701@wedding",
+        "DTSTAMP:" + stamp,
+        "DTSTART:" + event.start,
+        "DTEND:" + event.end,
+        "SUMMARY:" + escapeICal(event.title),
+        "LOCATION:" + escapeICal(venue),
+        "DESCRIPTION:" + escapeICal(
+          "Join us to celebrate Shubham and Karuna's wedding!"
+        ),
+        "END:VEVENT"
+      );
+    });
+
+    lines.push("END:VCALENDAR");
+
+    const calendarContent = lines.join("\r\n") + "\r\n";
+
+    const blob = new Blob(
+      [calendarContent],
+      { type: "text/calendar;charset=utf-8" }
+    );
+
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+
+    link.href = url;
+    link.download = "Shubham-Karuna-Wedding.ics";
+
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+
+    // Allow mobile browsers enough time to process the file.
+    window.setTimeout(function () {
+      URL.revokeObjectURL(url);
+    }, 60000);
+
+  });
+
+});
+

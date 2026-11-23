@@ -1127,3 +1127,67 @@ footer small {
     animation: none;
   }
 }
+
+
+
+/* WEDDING CALENDAR BUTTON - AUTOMATED */
+
+.calendar-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+  padding: 0 16px;
+}
+
+.calendar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 52px;
+  padding: 13px 26px;
+
+  border: 1px solid #c9a45c;
+  border-radius: 40px;
+
+  background: #713b3d;
+  color: #fffaf0;
+
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(80, 35, 45, 0.13);
+  transition: all 0.3s ease;
+}
+
+.calendar-icon {
+  flex-shrink: 0;
+}
+
+.calendar-btn:hover {
+  background: #bd9a63;
+  color: #34251f;
+  transform: translateY(-2px);
+}
+
+.calendar-btn:active {
+  transform: scale(0.97);
+}
+
+.calendar-btn:focus-visible {
+  outline: 3px solid #bd9a63;
+  outline-offset: 4px;
+}
+
+@media (max-width: 600px) {
+  .calendar-btn {
+    width: 100%;
+    max-width: 340px;
+    font-size: 13px;
+    padding: 13px 16px;
+  }
+}
+
